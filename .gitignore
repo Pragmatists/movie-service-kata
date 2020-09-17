@@ -1,0 +1,70 @@
+# Java Ignores
+/java/movie-service-kata/target
+/java/movie-service-kata/.classpath
+/java/movie-service-kata/.project
+/java/movie-service-kata/.settings
+/java/movie-service-kata/tomcat.*
+/java/movie-service-kata/.idea
+/java/movie-service-kata/*.iml
+
+# C# Ignores
+_ReSharper.*/
+[Bb]in
+[Oo]bj
+*.suo
+*.user
+_NCrunch_*/
+
+# Python Ignores
+*.pyc
+
+#php netbeans
+php/nbproject/
+
+# JavaScript Ignores
+/javascript/node_modules
+
+# Ignore Vim undo history
+*.un~
+
+# sbt specific
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+
+# IntelliJ IDEA
+.idea/
+.idea_modules
+out/
+*.iml
+**/.idea
+
+#Xcode / Objective-c Ignores
+
+.DS_Store
+
+## Build generated
+build/
+DerivedData
+
+## Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+## Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
