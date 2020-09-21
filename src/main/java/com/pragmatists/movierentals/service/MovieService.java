@@ -6,30 +6,33 @@ import java.util.List;
 import com.pragmatists.movierentals.dao.MovieDAO;
 import com.pragmatists.movierentals.movie.Movie;
 import com.pragmatists.movierentals.user.User;
-import com.pragmatists.movierentals.user.UserSession;
 import com.pragmatists.movierentals.exception.UserNotLoggedInException;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class MovieService {
+	@Autowired
+	private MovieDAO movieDAO;
 
-	//shows a list of user movies if user is a friend of logged in user
-	public List<Movie> getFriendMovies(User user) throws UserNotLoggedInException {
-		List<Movie> movieList = new ArrayList<Movie>();
-		User loggedUser = UserSession.getInstance().getLoggedUser();
-		boolean isFriend = false;
-		if (loggedUser != null) {
-			for (User friend : user.getFriends()) {
-				if (friend.equals(loggedUser)) {
-					isFriend = true;
-					break;
-				}
-			}
-			if (isFriend) {
-				movieList = MovieDAO.findMoviesByUser(user);
-			}
-			return movieList;
-		} else {
+	public List<Movie> getFriendMovies(User user, User loggedInUser) throws UserNotLoggedInException {
+		validate(loggedInUser);
+
+		return user.isFriendsWith(loggedInUser)
+				? tripsFrom(user)
+				: noMovies();
+	}
+
+	private ArrayList<Movie> noMovies() {
+		return new ArrayList<Movie>();
+	}
+
+	private void validate(User loggedInUser) {
+		if (loggedInUser == null) {
 			throw new UserNotLoggedInException();
 		}
+	}
+
+	private List<Movie> tripsFrom(User user) {
+		return movieDAO.moviesByUser(user);
 	}
 	
 }

@@ -9,11 +9,7 @@ public class User {
 
 	private List<Movie> movies = new ArrayList<Movie>();
 	private List<User> friends = new ArrayList<User>();
-	
-	public List<User> getFriends() {
-		return friends;
-	}
-	
+
 	public void addFriend(User user) {
 		friends.add(user);
 	}
@@ -24,6 +20,10 @@ public class User {
 	
 	public List<Movie> movies() {
 		return movies;
+	}
+
+	public boolean isFriendsWith(User anotherUser) {
+		return friends.contains(anotherUser);
 	}
 
 }
