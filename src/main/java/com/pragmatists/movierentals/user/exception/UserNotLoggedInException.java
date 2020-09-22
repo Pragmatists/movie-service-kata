@@ -1,4 +1,4 @@
-package com.pragmatists.movierentals.exception;
+package com.pragmatists.movierentals.user.exception;
 
 public class UserNotLoggedInException extends RuntimeException {
 

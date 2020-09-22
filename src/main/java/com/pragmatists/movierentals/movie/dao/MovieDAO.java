@@ -1,4 +1,4 @@
-package com.pragmatists.movierentals.dao;
+package com.pragmatists.movierentals.movie.dao;
 
 import java.util.List;
 
