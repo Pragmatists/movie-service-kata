@@ -1,9 +1,10 @@
 package com.pragmatists.movierentals.movie;
 import com.pragmatists.movierentals.movie.CustomerBuilder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-import static junit.framework.Assert.assertEquals;
-import static junit.framework.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 
 public class CustomerTest {
 
