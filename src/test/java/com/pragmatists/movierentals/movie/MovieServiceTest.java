@@ -22,10 +22,10 @@ import static org.mockito.Mockito.when;
 public class MovieServiceTest {
     private static final User UNUSED_USER = null;
     private static final User ANOTHER_USER = new User();
-    private static final Movie SHREK = new Movie("Shrek",1);
+    private static final Movie SHREK = new Movie("Shrek",new RegularPrice());
     private static final User GUEST = null;
     private static final User LOGGED_IN_USER = new User();
-    private static final Movie RAMBO = new Movie("Rambo", 2);
+    private static final Movie RAMBO = new Movie("Rambo", new RegularPrice());
 
     @Mock
     private MovieDAO movieDAO;
